@@ -28,7 +28,7 @@ public class Student extends Person{
         eat();
         super.eat();
         walk();
-        System.out.println("姓名："+name+"   年龄："+age+"   父类中的年龄是："+super.age+" xxx  专业："+major);
+        System.out.println("姓名："+name+"   年龄："+age+"   父类中的年龄是："+super.age+"   专业："+major);
     }
 
 }
