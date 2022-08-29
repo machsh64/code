@@ -1,5 +1,7 @@
 package day17;
 
+import day17.TriAngle;
+
 /**
  * 编写两个类，TriAngle和TriAnTest，其中TriAngle类中声明私有的
  * 底边长base和高height，同时声明公共方法访问私有变量。此外，提供
