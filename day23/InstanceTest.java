@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @author : Ren
  * @Date : 2022/06/16/22:02
- * @Param :
+ * @Param :    多态是运行时类型（动态绑定的验证）
  */
 public class InstanceTest {
 

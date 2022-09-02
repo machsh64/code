@@ -181,6 +181,7 @@ class administratorPage {
         System.out.print("\t请输入密码： ");
         password = scan.nextInt();
     }
+
     //    管理员第二页
     public void control(Scanner scan) {
 

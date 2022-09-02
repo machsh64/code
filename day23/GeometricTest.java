@@ -53,7 +53,7 @@ public class GeometricTest {
 *@Param : 父类代表几何形状
 *
 */
-class GeometricObject{
+abstract class GeometricObject{
 
     protected String color;   //颜色
     protected double weight;  //宽
@@ -84,9 +84,11 @@ class GeometricObject{
         this.weight = weight;
     }
 
-    public double findArea(){
+   /* public double findArea(){     //多态学习时期未掌握抽象类方法，不得不设置return 0；将方法保留
         return 0;
-    }
+    }*/
+
+    public abstract double findArea();       //学习抽象类方法后，可以先将由未知子类设立，不确定方法体的方法修饰为抽象类方法，同时GeometricObject类也必须修饰为抽象类
 }
 
 /**
@@ -123,7 +125,8 @@ class Circle extends GeometricObject{
     *@Param : [计算园的面积]
     *@Return : double
     *
-    */
+     * @return
+     */
     @Override
     public double findArea() {
 
@@ -176,7 +179,8 @@ class MyRectangle extends GeometricObject{
     *@Param : [计算矩形面积]
     *@Return : double
     *
-    */
+     * @return
+     */
     @Override
     public double findArea() {
 
