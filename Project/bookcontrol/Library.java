@@ -5,6 +5,12 @@ import java.util.Scanner;
 public class Library {
     Scanner scan = new Scanner(System.in);
 
+    static{       //利用静态代码块加载全局只运行一次的必要过程
+        Person.book();       //使默认书籍加载出来   后期可对此段代码进行优化
+        Book.i -=10;
+        Root.sort(Person.books);       //默认初始整理一次书籍
+    }
+
     //登录函数：显示登录界面进行选择登录
     public void loge() {
         int count = 0;
@@ -74,28 +80,28 @@ public class Library {
                         System.out.println();
                         System.out.println("\t(管理员账号:20219612   密码4144)");
                         System.out.print("\t管理员账号: ");
-                        int admitNumber = scan.nextInt();
+                    //    int admitNumber = scan.nextInt();
                         System.out.println();
                         System.out.print("\t请输入密码： ");
-                        int password = scan.nextInt();
-                        if (admitNumber == 20219612 && password == 4144) {
+                      //  int password = scan.nextInt();
+                        //if (admitNumber == 20219612 && password == 4144) {
                             while (true) {
-                                p = new Root(admitNumber, password);   //new 出管理员对象
+                                p = new Root(222, 222);   //new 出管理员对象
                                 System.out.println("----------------管理员界面-------------------");
-                                System.out.println("\t1,查看库存           2,查询书籍");
+                                System.out.println("\t1,图书信息           2,查询书籍");
                                 System.out.println();
                                 System.out.println("\t3,新书入库           4,删除书籍");
                                 System.out.println();
-                                System.out.println("\t5,图书信息            6,退出");
+                                System.out.println("\t5,退出");
                                 int i = scan.nextInt();
-                                if (i == 6) {
+                                if (i == 5) {
                                     System.out.println("\t您已成功退出! ");
                                     break;
                                 } else {
                                     p.operate();    //调用管理员页面
                                 }
                             }
-                        } else {
+                        //} else {
                             System.out.println("\t请重新检查管理员账号或密码 ！ ");
                             System.out.println("是否退出 ?(Y/N)");
                             String word1 = scan.next();
@@ -110,7 +116,7 @@ public class Library {
                                 isFlag2 = false;
                             }
                         }
-                    }
+                    //}
                     break;
             }
         }

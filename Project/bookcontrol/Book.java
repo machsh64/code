@@ -6,6 +6,7 @@ public class Book {
     private String publisher; //出版社
     private String category; //分类
     private int bookQuantity; //库存数量
+    public static int i = 10;  //书架存放书的种类数量  设置为全局静态变量 初始数量由Person类中书类决定
 
     //属性
     public Book(String name, String author, String publisher, String category, int bookQuantity) {
@@ -14,15 +15,14 @@ public class Book {
         this.publisher = publisher;
         this.category = category;
         this.bookQuantity = bookQuantity;
+
+        i++;    //每次创建新书后自动增加一个书架位
     }
 
-    public Book() {  //默认20本书
-        this(20);
-    }          //可进行更改初始书籍数量,具体由实例化中的空余数目决定
-
-    public Book(int i) {
-        Person.books = new Book[i];
-    }     //可更改实例化的对象进行设置sql的创建
+    public Book(int num) {
+        //可更改实例化的对象进行设置sql的创建
+        Person.books = new Book[num];
+    }
 
     //属性的获取和设置
     public String getName() {         //用get 和 set进行封装属性

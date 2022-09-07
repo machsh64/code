@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class User extends Person implements operate {   //user类继承person的类，  实现operate接口
 
-    public User(int userName, int password) {
+    public User(int userName, int password) {              //后期可增加 增加借阅员的功能，不同人不同账号不同密码
         //调用人基类的构造函数（派生类不继承基类的构造函数）
         super(userName, password);
     }
@@ -39,14 +39,14 @@ public class User extends Person implements operate {   //user类继承person的
         }
     }
 
-
+    @Override
     public void select(Book[] books) {
         System.out.println("请输入书名进行查询：");
         String name = scan.next();
         if (name != null) {
             boolean flag = false;
             int bookNum = 0;
-            for (int i = 0; i < books.length; i++) {
+            for (int i = 0; i < Book.i; i++) {
                 if (books[i].getName() != null && name.equals(books[i].getName())) {
                     flag = true;
                     bookNum = i;
@@ -65,12 +65,12 @@ public class User extends Person implements operate {   //user类继承person的
         }
     }
 
-
+    @Override
     public void delete(Book[] books) {
         System.out.println("请输入要借阅的书名:");
         String name = scan.next();
         if (name != null) {
-            for (int i = 0; i < books.length - 1; i++) {
+            for (int i = 0; i < Book.i; i++) {
                 if (books[i].getName().equals(name)) {
                     //借走书时 给book类中bookQuantity - 1
                     if (books[i].getBookQuantity() == 0) {
@@ -86,6 +86,7 @@ public class User extends Person implements operate {   //user类继承person的
         }
     }
 
+    @Override
     public void add(Book[] books) {
 
         System.out.println("请输入要还的书名：");
@@ -103,15 +104,15 @@ public class User extends Person implements operate {   //user类继承person的
     }
 
 
+    @Override
     public void list(Book[] books) {
         System.out.println("图书列表如下:" + "\n" + "【书名】\t\t\t【作者】\t\t\t【出版社】\t\t\t【分类】\t\t\t【库存】");  //打印Book数组
-        for (Book book : books) {
-            if (book != null) {
-                int bookNumber = book.getBookQuantity();
+        for (int i = 0; i < Book.i; i++) {
+            if (books[i] != null) {
+                int bookNumber = books[i].getBookQuantity();
                 if (bookNumber != 0) {
-                    System.out.println(
-                            "【" + book.getName() + "】\t\t【" + book.getAuthor() + "】\t\t【" + book.getPublisher()
-                                    + "】\t\t【" + book.getCategory() + "】\t\t" + book.getBookQuantity());
+                    System.out.println("【" + books[i].getName() + "】\t\t\t【" + books[i].getAuthor() + "】\t\t\t【" + books[i].getPublisher()
+                            + "】\t\t\t【" + books[i].getCategory() + "】\t\t\t" + books[i].getBookQuantity());
 
                 }
             }
