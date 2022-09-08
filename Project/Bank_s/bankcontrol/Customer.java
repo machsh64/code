@@ -5,10 +5,6 @@ public class Customer {
     private String lastName;
     private Account account;
 
-    public Customer(){
-
-    }
-
     public Customer(String firstName,String lastName){
         this.firstName = firstName;
         this.lastName = lastName;

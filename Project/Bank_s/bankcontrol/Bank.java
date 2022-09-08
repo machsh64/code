@@ -27,4 +27,30 @@ public class Bank {
 
         return customers[index];
     }
+
+    //添加用户
+    public void add(Bank bank,int moneyAt){
+        bank.getCustomers((bank.getNumberOfCustomer() - 1)).setAccount(new Account(moneyAt));
+        System.out.println("\n用户创建成功，你的卡号为 ：" + (bank.getNumberOfCustomer() - 1));
+        System.out.println("现在银行总共有 " + bank.getNumberOfCustomer() + "位用户\n");
+    }
+
+    //存钱
+    public void deposit(Bank bank,int number,int money){
+        bank.getCustomers(number).getAccount().deposit(money);
+    }
+
+    //取钱
+    public void widthDraw(Bank bank,int number,int money){
+        bank.getCustomers(number).getAccount().withdraw(money);
+    }
+
+    //查询
+    public void accountFind(Bank bank,int card){
+        System.out.println("\n客户" + bank.getCustomers(card).getFirstName() +
+                " " +
+                bank.getCustomers(card).getLastName() +
+                "的账户余额为 ：" +
+                bank.getCustomers(card).getAccount().getBalance());
+    }
 }
