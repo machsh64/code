@@ -13,7 +13,6 @@ public class InterfaceTest8 {
         //通过实现类的对象，可以调用接口中的默认方法
         s.method3();
         s.method2();
-
         
        /* s.method1;*/
         //接口中定义的静态方法，只能通过接口来调用
