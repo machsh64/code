@@ -15,10 +15,8 @@ public class InterfaceTest8 {
         s.method2();
 
        /* s.method1;*/
-
         //接口中定义的静态方法，只能通过接口来调用
         CompareA.method1();
-
 
     }
 
