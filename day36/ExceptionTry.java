@@ -56,7 +56,7 @@ import java.io.IOException;
  *                               针对于编译时异常，一定要考虑异常的处理
  *
  **/
-public class ExceptionTest {
+public class ExceptionTry {
 
     //NumberFormatException     数值转换异常
     @Test
