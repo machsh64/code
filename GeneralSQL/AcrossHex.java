@@ -13,7 +13,7 @@ import java.util.Stack;
 public class AcrossHex {
 
     //十进制到八进制的转换
-    public static final int toEightHex(int tenHex) throws RuntimeException {
+    public static int toEightHex(int tenHex) throws RuntimeException {
         Stack<Integer> Stack = new Stack<>();
 
         //将十进制数转换为八进制压入栈内
@@ -40,7 +40,7 @@ public class AcrossHex {
     }
 
     //八进制到十进制的转换
-    public static final int toTentHex(int eightHex) throws RuntimeException {
+    public static int toTentHex(int eightHex) throws RuntimeException {
         Stack<Integer> Stack = new Stack<>();
 
         //将八进制数转换为十进制压入栈内
