@@ -108,46 +108,5 @@ public class TeamService {
         team[--total] = null;
         System.out.println("删除成功");
     }
-
-    @Test
-    public void test() {
-        TeamService tsc = new TeamService();
-        NameListService lst = new NameListService();
-        Scanner scan = new Scanner(System.in);
-
-
-        for (int i = 0; i < lst.getAllEmployees().length; i++) {
-            System.out.println(lst.getAllEmployees()[i]);
-        }
-        System.out.println("***********\n");
-        System.out.print("请输入要添加的员工ID：");
-        tsc.addMember(lst.getEmployees(2));
-        tsc.addMember(lst.getEmployees(4));
-
-        getTeam();    //为了使this.team赋值给team进行一次空操作 ,后续可进行优化
-
-        for (int i = 0; i < getTeam().length; i++) {
-            System.out.println(tsc.getTeam()[i]);
-        }
-        System.out.println("***********\n");
-        for (int i = 0; i < lst.getAllEmployees().length; i++) {
-            System.out.println(lst.getAllEmployees()[i]);
-        }
-
-        System.out.println("***********\n");
-        System.out.print("请输入要删除的员工ID：");
-        tsc.removeMember(2);
-
-
-
-        for (int i = 0; i < getTeam().length; i++) {
-            System.out.println(tsc.getTeam()[i]);
-        }
-        System.out.println("***********\n");
-        for (int i = 0; i < lst.getAllEmployees().length; i++) {
-            System.out.println(lst.getAllEmployees()[i]);
-        }
-
-
-    }
+    
 }
