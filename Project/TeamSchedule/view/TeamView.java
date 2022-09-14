@@ -122,10 +122,4 @@ public class TeamView {
        }
     }
 
-    public static void main(String[] args) {
-        TeamView vie = new TeamView();
-
-        vie.enterMainMean();
-
-    }
 }
