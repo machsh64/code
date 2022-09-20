@@ -1,3 +1,3 @@
 # code
 JavaSE 基础部分
-请不要fork，谢谢。
+请不要pull request，谢谢。
